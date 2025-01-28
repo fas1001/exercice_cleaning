@@ -2,8 +2,7 @@
 library(dplyr)
 
 # Lire et sélectionner les données
-df_raw <- read.csv("data/ces/1993/raw/ces93.csv") %>%
- select(cpsigen, cpsa3, cpsg1, cpso11, pesf7)
+df_raw <- read.csv("data/ces/1993/raw/ces93.csv")
 
 # Créer un nouveau dataframe propre avec une colonne id
 df_clean <- data.frame(id = 1:nrow(df_raw))
@@ -74,7 +73,6 @@ df_clean$issue_native_feel[!is.na(df_raw$pesf7) &
                                                              df_raw$pesf7 >= 0 & 
                                                              df_raw$pesf7 <= 100] / 100
 table(df_clean$issue_native_feel, useNA = "ifany")
-hist(df_clean$issue_native_feel, breaks = 10)
 
 # Sauvegarder les données nettoyées
 write.csv(df_clean, "data/ces/1993/clean/ces93_clean.csv", row.names = FALSE)

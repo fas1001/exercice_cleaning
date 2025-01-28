@@ -15,8 +15,7 @@ library(dplyr)
 #   - cps21_vaccine1 : Statut vaccinal COVID-19
 #   - cps21_religion : Religion du répondant
 
-df_raw <- read.csv("") %>% # <- Insérer le chemin du fichier
-  select(cps21_genderid, cps21_demsat, cps21_v_likely, cps21_vaccine1, cps21_religion)
+df_raw <- read.csv("data/ces/2021/raw/ces2021.csv") # <- Insérer le chemin du fichier
 
 # ÉTAPE 3: Créer un nouveau dataframe propre
 df_clean <- data.frame(id = 1:nrow(df_raw))
