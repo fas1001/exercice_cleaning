@@ -9,12 +9,6 @@ Cet exercice vise à vous familiariser avec les techniques de base du nettoyage 
 exercice_cleaning
 ├── data
 │   └── ces
-│       ├── 1965
-│       │   └── raw
-│       │       └── ces65.csv
-│       ├── 1968
-│       │   └── raw
-│       │       └── ces68.csv
 │       ├── 1993
 │       │   ├── clean
 │       │   │   └── ces93_clean.csv
@@ -25,16 +19,13 @@ exercice_cleaning
 │               └── ces2021.csv
 ├── docs
 │   └── codebooks
-│       ├── CES2021_codebook.pdf
-│       ├── ces65_codebook.pdf
-│       ├── ces68_codebook.pdf
+│       ├── ces21_codebook.pdf
 │       └── ces93_codebook.pdf
 ├── R
 │   └── cleaning.R
 ├── README.md
 └── tests
-    └── ex_cleaning_1.R
-```
+    └── ex_cleaning_1.R```
 
 ## Description de l'exercice
 
