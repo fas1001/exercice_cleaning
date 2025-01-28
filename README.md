@@ -31,7 +31,7 @@ exercice_cleaning
 ## Description de l'exercice
 
 ### 1. Exemple guidé (CES 1993)
-Le script `exemple_nettoyage_1993.R` montre comment nettoyer 5 variables du CES 1993 :
+Le script `tests/ex_cleaning_1.R` montre comment nettoyer 5 variables du CES 1993 :
 - Genre du répondant
 - Intention de vote
 - Opposition à la TPS
@@ -39,7 +39,7 @@ Le script `exemple_nettoyage_1993.R` montre comment nettoyer 5 variables du CES 
 - Sentiment envers les peuples autochtones
 
 ### 2. Exercice pratique (CES 2021)
-Le script `exercice_nettoyage_2021.R` vous propose de nettoyer 5 variables du CES 2021 :
+Le script `R/cleaning.R` vous propose de nettoyer 5 variables du CES 2021 :
 - Genre (cps21_genderid)
 - Satisfaction démocratique (cps21_demsat)
 - Probabilité de voter (cps21_v_likely)
