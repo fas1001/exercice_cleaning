@@ -25,7 +25,8 @@ exercice_cleaning
 │   └── cleaning.R
 ├── README.md
 └── tests
-    └── ex_cleaning_1.R```
+    └── ex_cleaning_1.R
+```
 
 ## Description de l'exercice
 
