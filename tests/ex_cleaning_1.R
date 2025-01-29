@@ -61,18 +61,20 @@ df_clean$ses_born_canada[df_raw$cpso11 != "canada"] <- 0
 table(df_clean$ses_born_canada, useNA = "ifany")
 
 #------------------------------------------------------------------------------#
-# VARIABLE : pesf7 - Feeling on native people
-# Question : How do you feel about Aboriginal Peoples?
-# Codage   : 0 = Very negative, 1 = Very positive
+# VARIABLE : cpsa2 - Probability of voting
+# Question : How likely is it that you will vote on election day?
+# Codage   : 0 = Very unlikely, 1 = Very likely
 #------------------------------------------------------------------------------#
-table(df_raw$pesf7, useNA = "ifany")
-df_clean$issue_native_feel <- NA
-df_clean$issue_native_feel[!is.na(df_raw$pesf7) & 
-                         df_raw$pesf7 >= 0 & 
-                         df_raw$pesf7 <= 100] <- df_raw$pesf7[!is.na(df_raw$pesf7) & 
-                                                             df_raw$pesf7 >= 0 & 
-                                                             df_raw$pesf7 <= 100] / 100
-table(df_clean$issue_native_feel, useNA = "ifany")
+table(df_raw$cpsa2)
+df_clean$vote_probability_to_vote <- NA
+df_clean$vote_probability_to_vote[df_raw$cpsa2 == "very unlikely"] <- 0
+df_clean$vote_probability_to_vote[df_raw$cpsa2 == "somewhatunlikely"] <- 0.33
+df_clean$vote_probability_to_vote[df_raw$cpsa2 == "somewhat likely"] <- 0.67
+df_clean$vote_probability_to_vote[df_raw$cpsa2 == "very likely"] <- 1
+table(df_clean$vote_probability_to_vote, useNA = "ifany")
+
+# Sort variables. ses first, then vote, then issues
+df_clean <- df_clean %>% select(starts_with("ses"), starts_with("vote"), starts_with("issue"))
 
 # Sauvegarder les données nettoyées
 write.csv(df_clean, "data/ces/1993/clean/ces93_clean.csv", row.names = FALSE)

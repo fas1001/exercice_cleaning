@@ -45,7 +45,7 @@ df_clean <- data.frame(id = 1:nrow(df_raw))
 
 #------------------------------------------------------------------------------#
 # VARIABLE : cps21_v_likely
-# Question : Lors du jour de l'élection, est-il... (Intentions de vote)
+# Question : Lors du jour de l'élection, est-il... (Intentions d'aller voter)
 # DÉFI DE NETTOYAGE: 
 # - Examiner les données avec table()
 # - Créer une nouvelle variable vote_probability
